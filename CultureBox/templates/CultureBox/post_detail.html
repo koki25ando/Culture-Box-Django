@@ -12,9 +12,12 @@
             <a class= "btn btn-danger btn-sm mt-1" href="{% url 'post-delete' object.id %}">Delete</a>
           </div>
         {% endif %}
+        <h1>"{{ post.interest }}"</h1>
       </div>
-      <h2 class="article-title">{{ object.title }}</h2>
-      <p class="article-content">{{ object.content }}</p>
+      <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+      <p class="article-content">{{ post.content }}</p>
+      <p>#{{ post.category }}</p>
+      <a class="article-content" href="{{ post.link }}" target="_blank" id="post_link"><i class="fa fa-link"></i>Link</a>
     </div>
   </article>
 {% endblock content%}
